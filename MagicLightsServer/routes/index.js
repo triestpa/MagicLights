@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/changeColor', login, getDevice, changeColor);
+router.post('/changeColor', login, getDevice, getColor, changeColor);
 
 var tempToken = "4e04512eacbe6bd53e8b65a0a1bcb37a1ccdf387";
 var deviceId = "54ff71066678574925340267";
@@ -36,8 +36,19 @@ function getDevice(req, res, next) {
   });
 }
 
+function getColor(req, res, next) {
+    var newColor = req.body.color;
+    if (!newColor || newColor.length !== 9) {
+      return res.status(400).send('Invalid Color');
+    }
+    else {
+      req.color = newColor;
+      return next();
+    }
+}
+
 function changeColor(req, res, next) {
-  var newColor = req.body.color;
+  var newColor = req.color;
   console.log("New Color: " + newColor);
   req.device.callFunction('color', newColor, function(err, data) {
     if (err) {
