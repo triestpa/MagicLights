@@ -28,3 +28,11 @@ node_modules
 
 # Bower libraries
 bower_components
+
+# Android
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
