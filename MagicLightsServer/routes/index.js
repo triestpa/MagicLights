@@ -38,8 +38,8 @@ function getDevice(req, res, next) {
 
 function getColor(req, res, next) {
     var newColor = req.body.color;
-    if (!newColor || newColor.length !== 9) {
-      return res.status(400).send('Invalid Color');
+    if (!newColor) {
+      return res.status(400).send('No Color Recieved');
     }
     else {
       req.color = newColor;
