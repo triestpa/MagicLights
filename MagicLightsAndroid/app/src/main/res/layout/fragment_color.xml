@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.triestpa.magiclights.ColorFragment">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/blue_500"
+        android:id="@+id/button_color_blue"
+        android:layout_alignParentTop="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/red_500"
+        android:id="@+id/button_color_red"
+        android:layout_below="@+id/button_color_blue"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/green_500"
+        android:id="@+id/button_color_green"
+        android:layout_below="@+id/button_color_red"/>
+
+</RelativeLayout>

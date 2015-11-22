@@ -69,7 +69,7 @@ public class HttpUtil {
                 return response.code();
             }
             catch (IOException e) {
-                Log.e(TAG, e.getMessage());
+                Log.e(TAG, "Network Error: " + e.getMessage());
                 return -1;
             }
         }

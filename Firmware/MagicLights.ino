@@ -14,8 +14,12 @@ uint32_t GREEN[3] = {strip.Color(45,136,45), strip.Color(17,102,17), strip.Color
 
 // Convert the recieved hex string to a color
 uint32_t convertHexToColor(String hexString) {
-    // Get rid of '#' and convert it to integer
-    int number = (int) strtol( &hexString[1], NULL, 16);
+    int number;
+    if (hexString.charAt(0) == '#') {
+        // Get rid of '#' and convert it to integer
+        number = (int) strtol( &hexString[1], NULL, 16);
+    }
+    else { number = hexString.toInt(); }
 
     // Split them up into r, g, b values
     int r = number >> 16;
