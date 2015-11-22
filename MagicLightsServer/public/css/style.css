@@ -1,1 +1,20 @@
-body { padding-top:30px; }
+body {
+  padding-top: 30px;
+}
+
+.color-rect {
+  width: 33.33%;
+  height: 300px;
+}
+
+.rect-green {
+  background-color: green;
+}
+
+.rect-blue {
+  background-color: blue;
+}
+
+.rect-red {
+  background-color: red;
+}

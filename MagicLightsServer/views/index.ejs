@@ -8,33 +8,35 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+
 	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
 	<!-- JS -->
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
 
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/NerdCtrl.js"></script>
-	<script src="js/services/NerdService.js"></script>
-	<script src="js/controllers/GeekCtrl.js"></script>
-	<script src="js/services/GeekService.js"></script>
+	<script src="js/services/LightsService.js"></script>
 	<script src="js/appRoutes.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-app="sampleApp" ng-controller="NerdController">
+<body ng-app="magicLightsApp">
 <div class="container">
 
 	<!-- HEADER -->
 	<nav class="navbar navbar-inverse">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+			<a class="navbar-brand" href="/">Magic Lights</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="/nerds">Nerds</a></li>
-			<li><a href="/geeks">Geeks</a></li>
+			<li><a href="/patterns">Patterns</a></li>
 		</ul>
 	</nav>
 
