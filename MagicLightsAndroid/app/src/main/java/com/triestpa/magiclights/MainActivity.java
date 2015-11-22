@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        HttpUtil httpUtil = HttpUtil.getInstance();
+        httpUtil.changeColor("255000000");
     }
 
 
