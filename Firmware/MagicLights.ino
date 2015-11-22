@@ -12,19 +12,21 @@ uint32_t TAN[3] = {strip.Color(170,106,57), strip.Color(128,67,21), strip.Color(
 uint32_t BLUE[3] = {strip.Color(35,104,88), strip.Color(13,78,74), strip.Color(0,52,48)};
 uint32_t GREEN[3] = {strip.Color(45,136,45), strip.Color(17,102,17), strip.Color(0,68,0)};
 
+// Convert the recieved hex string to a color
+uint32_t convertHexToColor(String hexString) {
+    // Get rid of '#' and convert it to integer
+    int number = (int) strtol( &hexString[1], NULL, 16);
+
+    // Split them up into r, g, b values
+    int r = number >> 16;
+    int g = number >> 8 & 0xFF;
+    int b = number & 0xFF;
+
+    return strip.Color(r,g,b);
+}
 
 int setColor(String hexColor) {
-    /*
-    int hexValue = hexColor.toInt();
-    int red = ((hexValue >> 16) & 0xFF) / 255.0;
-    int green = ((hexValue >> 8) & 0xFF) / 255.0;
-    int blue = ((hexValue >> 0xFF) & 0xFF) / 255.0;
-    */
-    int red = hexColor.substring(0,2).toInt();
-    int green = hexColor.substring(3,5).toInt();
-    int blue = hexColor.substring(6,8).toInt();
-
-    uint32_t newColor = strip.Color(red,green,blue);
+    uint32_t newColor = convertHexToColor(hexColor);
 
     for (uint16_t i=0; i < strip.numPixels(); i++) {
     strip.setPixelColor(i, newColor);
